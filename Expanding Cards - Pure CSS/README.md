@@ -5,4 +5,3 @@
   [Cards] Pure CSS Expanding Columns</a> by Joshua Caleb Davids (<a href="https://codepen.io/joshuacalebdavids">@joshuacalebdavids</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
-<script async src="https://public.codepenassets.com/embed/index.js"></script>
