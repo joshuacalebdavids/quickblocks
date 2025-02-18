@@ -20,5 +20,5 @@ This repository is a collection of ready-to-use solutions for various tasks and 
 
 ## Support
 
-For support, email fake@fake.com or join our Slack channel.
+For support, email joshuadavids.jcd@gmail.com.
 
