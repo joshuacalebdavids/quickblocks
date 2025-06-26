@@ -12,7 +12,7 @@ Each folder is organized by purpose, making it easy to drop into existing projec
 
 ## ✍️ Authors
 
-- [@JoshuaDavids](https://www.github.com/JoshuaDavids)
+- [@JoshuaDavids](https://github.com/joshuacalebdavids/)
 
 ## 📄 License
 
