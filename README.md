@@ -1,7 +1,7 @@
 
 # 💡 Quick Blocks
 
-A curated collection of reusable front-end solutions for common design patterns, UI components, and functionality — built with HTML5, CSS3, and JavaScript.
+A curated collection of reusable front-end solutions for common design patterns, UI components, and functionality; built with HTML5, CSS3, and JavaScript.
 Ideal for speeding up the development of both code-based PWAs and WordPress sites.
 
 Each folder is organized by purpose, making it easy to drop into existing projects or use as a starting point for new builds.
