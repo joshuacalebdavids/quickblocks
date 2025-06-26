@@ -1,24 +1,26 @@
 
-## Authors
+# 💡 Quick Blocks
+
+A curated collection of reusable front-end solutions for common design patterns, UI components, and functionality — built with HTML5, CSS3, and JavaScript.
+Ideal for speeding up the development of both code-based PWAs and WordPress sites.
+
+Each folder is organized by purpose, making it easy to drop into existing projects or use as a starting point for new builds.
+
+## 🧰 Tech Stack
+
+**Client:** HTML5, CSS3(SCSS), JS(GSAP, WOW, ANIME)
+
+## ✍️ Authors
 
 - [@JoshuaDavids](https://www.github.com/JoshuaDavids)
 
-
-## Tech Stack
-
-**Client:** HTML5, CSS3, JS
-
-
-
-# Useful Design Solutions
-
-This repository is a collection of ready-to-use solutions for various tasks and website sections. Each folder is named according to its purpose, making it easy to find what you need when building or updating a project. These solutions are designed for both code-based PWAs and WordPress websites, helping streamline development and save time.
-
+## 📄 License
 
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://github.com/JoshuaDavids/useful-design-solutions?tab=GPL-3.0-1-ov-file)
 
 
-## Support
+## 🤝 Support
 
-For support, email joshuadavids.jcd@gmail.com.
+Need help or have suggestions?
+Email me at joshuadavids.jcd@gmail.com.
 
