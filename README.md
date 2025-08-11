@@ -1,4 +1,3 @@
-
 # 💡 Quick Blocks
 
 Quick Blocks is a curated library of ready-to-use, front-end building blocks, covering common design patterns, UI components, and functional snippets; built with HTML5, CSS3, and JavaScript.
@@ -15,7 +14,7 @@ Every block is self-contained and neatly organized by purpose, making it effortl
 
 **Scripts:** JavaScript, TypeScript
 
-**Frameworks / Libraries:** Three.js, GSAP
+**Frameworks / Libraries:** Three.js, GSAP, WebGL
 
 ## ✍️ Authors
 
@@ -25,9 +24,7 @@ Every block is self-contained and neatly organized by purpose, making it effortl
 
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://github.com/JoshuaDavids/useful-design-solutions?tab=GPL-3.0-1-ov-file)
 
-
 ## 🤝 Support
 
 Need help or have suggestions?
 Email me at joshuadavids.jcd@gmail.com.
-
