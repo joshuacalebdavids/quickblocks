@@ -1,14 +1,21 @@
 
 # 💡 Quick Blocks
 
-A curated collection of reusable front-end solutions for common design patterns, UI components, and functionality; built with HTML5, CSS3, and JavaScript.
-Ideal for speeding up the development of both code-based PWAs and WordPress sites.
+Quick Blocks is a curated library of ready-to-use, front-end building blocks, covering common design patterns, UI components, and functional snippets; built with HTML5, CSS3, and JavaScript.
 
-Each folder is organized by purpose, making it easy to drop into existing projects or use as a starting point for new builds.
+Whether you’re creating a PWA from scratch or fine-tuning a WordPress site, Quick Blocks helps you ship faster, cleaner, and more maintainable code.
+
+Every block is self-contained and neatly organized by purpose, making it effortless to drop into existing projects or use as a starting point for new builds.
 
 ## 🧰 Tech Stack
 
-**Client:** HTML5, CSS3(SCSS), JS(GSAP, WOW, ANIME)
+**Markup:** HTML5, Pug
+
+**Styles:** CSS3, SCSS
+
+**Scripts:** JavaScript, TypeScript
+
+**Frameworks / Libraries:** Three.js, GSAP
 
 ## ✍️ Authors
 
