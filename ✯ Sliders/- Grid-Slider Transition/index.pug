@@ -1,0 +1,56 @@
+.preloader
+  .preloader-counter 0
+
+.container
+  .grid-container
+    #grid.grid
+      .grid-item(data-index="0")
+        .grid-item-img(style="background-image:url(https://cdn.cosmos.so/dfff1381-f09c-454b-b98d-8a79161c3d25?format=jpeg)")
+      .grid-item(data-index="1")
+        .grid-item-img(style="background-image:url(https://cdn.cosmos.so/c7af8b26-313a-40e4-9081-85f7fde00c22?format=jpeg)")
+      .grid-item(data-index="2")
+        .grid-item-img(style="background-image:url(https://cdn.cosmos.so/03a36d87-af8c-4cfe-bfed-7a3dd502404b.?format=jpeg)")
+      .grid-item(data-index="3")
+        .grid-item-img(style="background-image:url(https://cdn.cosmos.so/bdb2a659-2838-4055-a82e-f145c3fd4467?format=jpeg)")
+      .grid-item.target#target-item(data-index="4")
+        .grid-item-img(style="background-image:url(https://cdn.cosmos.so/fddfc757-d9c3-44f1-af6e-a607c3746738?format=jpeg)")
+      .grid-item(data-index="5")
+        .grid-item-img(style="background-image:url(https://cdn.cosmos.so/51a307de-a9ba-4c9e-ad24-beff1ce023d0?format=jpeg)")
+
+// Slide layers in stacking order
+// Base layer - current slide
+#slider-image.slider-image
+// Background parallax layer
+#slider-image-bg.slider-image-bg
+// Top layer - next slide
+#slider-image-next.slider-image-next
+// Transition overlay
+#transition-overlay.transition-overlay
+
+#content.content
+  h1.content-title
+    span MONOCHROME SERIES
+  #content-paragraph.content-paragraph
+    | Without color, we see differently. Form and texture speak louder. The world simplified to light and dark reveals truths that color often conceals. In this space between extremes, we find clarity. The photograph becomes a mirror reflecting not just what we see, but how we see.
+
+.thumbnails
+  .thumbnail(data-index="0")
+    .thumbnail-img(style="background-image:url(https://cdn.cosmos.so/dfff1381-f09c-454b-b98d-8a79161c3d25?format=jpeg)")
+  .thumbnail(data-index="1")
+    .thumbnail-img(style="background-image:url(https://cdn.cosmos.so/c7af8b26-313a-40e4-9081-85f7fde00c22?format=jpeg)")
+  .thumbnail(data-index="2")
+    .thumbnail-img(style="background-image:url(https://cdn.cosmos.so/03a36d87-af8c-4cfe-bfed-7a3dd502404b.?format=jpeg)")
+  .thumbnail(data-index="3")
+    .thumbnail-img(style="background-image:url(https://cdn.cosmos.so/bdb2a659-2838-4055-a82e-f145c3fd4467?format=jpeg)")
+  .thumbnail.active(data-index="4")
+    .thumbnail-img(style="background-image:url(https://cdn.cosmos.so/fddfc757-d9c3-44f1-af6e-a607c3746738?format=jpeg)")
+  .thumbnail(data-index="5")
+    .thumbnail-img(style="background-image:url(https://cdn.cosmos.so/51a307de-a9ba-4c9e-ad24-beff1ce023d0?format=jpeg)")
+
+#switch.switch
+  button.switch-button.switch-button-grid.switch-button-current
+    span.indicator-dot
+    | GRID
+  button.switch-button.switch-button-slider
+    span.indicator-dot
+    | SLIDER

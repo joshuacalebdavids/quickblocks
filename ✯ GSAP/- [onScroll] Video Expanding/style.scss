@@ -1,0 +1,118 @@
+/* Google Fonts Import */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+
+/*==============================
+=            Variables         =
+==============================*/
+
+// Colors
+$color-primary-dark: #1e2023;
+$color-primary-light: #a0a89e;
+
+$color-section-1: #a0a89e;
+$color-section-2: #8c9389;
+$color-section-3: #b8c0b6;
+$color-section-4: #969e94;
+
+// Typography
+$font-primary: "Inter", sans-serif;
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$letter-spacing: -0.03em;
+
+// Responsive Sizes
+$title-size: clamp(2.5rem, 15vw, 15rem);
+$quote-size: clamp(1rem, 2vw, 2.5rem);
+$header-padding: clamp(0.5rem, 2vw, 2rem);
+$section-padding: clamp(1rem, 5vw, 3rem);
+
+/*==============================
+=            Mixins            =
+==============================*/
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin full-size {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin fixed-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*==============================
+=          Base Styles         =
+==============================*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+html,
+body {
+  @include full-size;
+  overflow-x: hidden;
+  font-family: $font-primary;
+  font-weight: $font-weight-regular;
+  letter-spacing: $letter-spacing;
+  background-color: $color-primary-dark;
+  color: $color-primary-light;
+}
+
+/*==============================
+=        Scroll Section        =
+==============================*/
+
+.scroll {
+  &__container {
+    height: 300vh;
+    position: relative;
+  }
+
+  &__media {
+    @include fixed-center;
+    @include full-size;
+    @include flex-center;
+    z-index: 1;
+  }
+
+  &__video {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 8px;
+
+    video {
+      @include full-size;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    color: white;
+  }
+
+  &__section {
+    height: 100vh;
+    @include flex-center;
+
+    &--end {
+      margin-top: 100vh;
+    }
+  }
+}

@@ -1,0 +1,222 @@
+// ==========================
+// Variables
+// ==========================
+$font-family-base: "PP Neue Montreal", sans-serif;
+
+$color-bg: #1e2023;
+$color-text: #f0ede8;
+
+$font-size-base: 1rem;
+$font-size-sm: 0.8rem;
+$font-size-xs: 0.7rem;
+$font-size-lg: 3rem;
+
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+
+$indicator-size: 8px;
+$breakpoint-md: 768px;
+$breakpoint-sm-height: 700px;
+
+// ==========================
+// Mixins
+// ==========================
+@mixin flex($direction: row, $justify: center, $align: center, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// ==========================
+// Font Face
+// ==========================
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("https://fonts.cdnfonts.com/css/pp-neue-montreal") format("woff2");
+  font-weight: 400;
+}
+
+// ==========================
+// Base Styles
+// ==========================
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: $font-family-base;
+  background-color: $color-bg;
+  color: $color-text;
+  padding: $spacing-md;
+  font-size: $font-size-base;
+}
+
+// ==========================
+// Projects Component
+// ==========================
+.projects {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100vh;
+  @include flex(column);
+  position: relative;
+
+  &__list {
+    @include flex(column);
+    width: 100%;
+    flex: 1;
+    overflow-y: auto;
+    position: relative;
+    @include hide-scrollbar;
+  }
+
+  &__item {
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: $spacing-lg;
+    position: relative;
+
+    @media (max-height: $breakpoint-sm-height) {
+      margin-bottom: $spacing-sm;
+    }
+  }
+
+  &__header {
+    position: relative;
+    display: inline-block;
+    z-index: 5;
+    pointer-events: auto;
+    will-change: transform, opacity, filter;
+  }
+
+  &__title {
+    font-size: $font-size-lg;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: $spacing-sm 0;
+
+    @media (max-width: $breakpoint-md) {
+      font-size: 2rem;
+    }
+
+    @media (max-height: $breakpoint-sm-height) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__indicator {
+    position: absolute;
+    width: $indicator-size;
+    height: $indicator-size;
+    background-color: $color-text;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 100;
+    will-change: width, opacity;
+
+    &--left {
+      left: -20px;
+    }
+
+    &--right {
+      right: -20px;
+    }
+  }
+
+  &__content {
+    @include flex(row, space-between, center);
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0 $spacing-md;
+    margin: 0;
+    pointer-events: none;
+
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column;
+    }
+  }
+
+  &__details {
+    width: 25%;
+    text-align: left;
+    font-size: $font-size-sm;
+    letter-spacing: 0.05rem;
+    font-weight: 500;
+
+    &--right {
+      text-align: right;
+
+      @media (max-width: $breakpoint-md) {
+        text-align: center;
+        margin-top: $spacing-md;
+        margin-bottom: 0;
+      }
+    }
+
+    @media (max-width: $breakpoint-md) {
+      width: 100%;
+      text-align: center;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  &__label {
+    margin-bottom: 0.25rem;
+    font-size: $font-size-xs;
+    letter-spacing: 0.05rem;
+  }
+
+  &__year {
+    margin-top: $spacing-sm;
+  }
+
+  &__image {
+    width: 40%;
+    max-width: 400px;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+
+    @media (max-width: $breakpoint-md) {
+      width: 80%;
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

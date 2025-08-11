@@ -1,0 +1,272 @@
+@import url("https://fonts.cdnfonts.com/css/thegoodmonolith");
+
+@font-face {
+  src: url("https://fonts.cdnfonts.com/css/pp-neue-montreal") format("woff2");
+  font-family: "PP Neue Montreal", sans-serif;
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "TheGoodMonolith", monospace;
+  background-color: #111;
+  color: #f0f0f0;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+
+  &-counter {
+    font-family: "TheGoodMonolith", monospace;
+    font-size: 3rem;
+    color: #f0f0f0;
+    opacity: 1;
+  }
+}
+
+.preloader-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Main container */
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Grid layout */
+.grid-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+
+  &-item {
+    position: relative;
+    overflow: hidden;
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    &.target {
+      grid-column: 2;
+      grid-row: 2;
+    }
+  }
+}
+
+/* Slide layers - stacking order is important */
+.slider-image,
+.slider-image-bg,
+.slider-image-next,
+.transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  visibility: hidden;
+  will-change: transform, opacity;
+}
+
+.slider-image {
+  width: 100%;
+  height: 100vh;
+  z-index: 80;
+}
+
+.slider-image-bg {
+  width: 110%;
+  height: 110vh;
+  z-index: 85;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.slider-image-next {
+  width: 100%;
+  height: 100vh;
+  z-index: 90;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.transition-overlay {
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  z-index: 95;
+  will-change: opacity;
+}
+
+/* Content area */
+.content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0;
+  padding: 10% 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  &-title {
+    text-align: left;
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 5rem;
+    color: #f0f0f0;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+
+    span {
+      display: block;
+      transform: translateY(100%);
+    }
+  }
+
+  &-paragraph {
+    text-align: left;
+    font-family: "TheGoodMonolith", monospace;
+    font-size: 1rem;
+    color: #f0f0f0;
+    max-width: 600px;
+    line-height: 1.3;
+    margin-bottom: 10%;
+    opacity: 0;
+  }
+}
+
+/* Thumbnails */
+.thumbnails {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 200;
+
+  .thumbnail {
+    width: 60px;
+    height: 40px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: border 0.3s ease;
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    &:hover {
+      border: 2px solid rgba(255, 255, 255, 0.7);
+    }
+
+    &.active {
+      border: 2px solid #fff;
+    }
+  }
+}
+
+/* Switch buttons */
+.switch {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  background: #222;
+  padding: 10px 20px;
+  border-radius: 4px;
+  z-index: 1000;
+  transition: padding 0.3s ease-in-out;
+
+  .switch-button {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-family: "TheGoodMonolith", monospace;
+    font-size: 14px;
+    padding: 5px 10px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+
+    &.switch-button-current {
+      color: #f0f0f0;
+    }
+
+    .indicator-dot {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background-color: #f0f0f0;
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &.switch-button-grid .indicator-dot {
+      left: -8px;
+    }
+
+    &.switch-button-slider .indicator-dot {
+      right: -8px;
+    }
+
+    &:hover .indicator-dot {
+      opacity: 1;
+    }
+  }
+}
