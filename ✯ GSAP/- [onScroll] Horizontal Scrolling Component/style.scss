@@ -1,0 +1,44 @@
+body {
+  overflow-x: hidden;
+  margin: 0;
+}
+
+.row,
+.section,
+section {
+  position: relative;
+  overflow: hidden;
+
+  &.section,
+  &.section {
+    text-align: center;
+  }
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.horiz-gallery {
+  &-strip,
+  &-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    will-change: transform;
+    position: relative;
+  }
+}
+
+.project-wrap {
+  width: 33vw;
+  padding: 2rem;
+  box-sizing: content-box;
+
+  img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+}
